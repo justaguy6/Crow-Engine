@@ -152,9 +152,9 @@ class Main extends Sprite
 		{
 			_MUTEX.acquire();
 
-			if (FileSystem.exists(Paths.getPath('images/characters', null, null)))
+			if (FileSystem.exists(Paths.getPath(SUtil.getStorageDirectory() + 'images/characters', null, null)))
 			{
-				var characterList:Array<String> = FileSystem.readDirectory(Paths.getPath('images/characters', null, null));
+				var characterList:Array<String> = FileSystem.readDirectory(Paths.getPath(SUtil.getStorageDirectory() + '/characters', null, null));
 				characterList.remove('icons');
 
 				for (char in characterList)
@@ -210,7 +210,7 @@ class Main extends Sprite
 			Settings.prefs = new Map<String, Dynamic>();
 		}
 
-		#if !mobile
+		#if mpbile
 		addChild(fps = new DebugInfo(10, 5, 1.5));
 		#end
 	}
