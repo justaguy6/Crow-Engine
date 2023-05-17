@@ -152,7 +152,7 @@ class Tools
 	public static function fileExists(file:String):Bool
 	{
 		#if sys
-		return FileSystem.exists(file);
+		return FileSystem.exists(SUtil.getStorageDirectory() + file);
 		#else
 		return Assets.exists(file);
 		#end
@@ -163,7 +163,7 @@ class Tools
 	public static function checkFileIsOfType(file:String, types:Array<String>)
 	{
 		if (types.length == 0)
-			return FileSystem.isDirectory(file);
+			return FileSystem.isDirectory(SUtil.getStorageDirectory() + file);
 
 		for (type in types)
 		{
