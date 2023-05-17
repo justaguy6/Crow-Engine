@@ -107,7 +107,7 @@ class Paths
 		{
 			for (mod in ModManager.mods)
 			{
-				if (FileSystem.exists(ModPaths.image(mod.folderName, file)))
+				if (FileSystem.exists(SUtil.getStorageDirectory() + ModPaths.image(mod.folderName, file)))
 				{
 					fullPath = ModPaths.image(mod.folderName, file);
 					break;
