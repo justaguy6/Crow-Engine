@@ -18,7 +18,7 @@ class WeekHandler
 		{
 			for (week in FileSystem.readDirectory(folder))
 			{
-				var filePath:String = Paths.data('weeks/$week');
+				var filePath:String = Paths.data(SUtil.getStorageDirectory() + 'weeks/$week');
 
 				if (!FileSystem.isDirectory(filePath))
 					weeks.push(Json.parse(Assets.getText(filePath)));
